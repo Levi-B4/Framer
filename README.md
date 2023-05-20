@@ -1,46 +1,31 @@
-# Digital Flipbook Player
+# Framer
 
 ## Description
-
-This is a mach Frontend interview assignment. It is meant to display the following:
-- General knowledge of browsers and the web platform
-- Proficiency using JavaScript / React / HTML / CSS to build UI components
-- Sense of visual design and attention to detail
-
+- Framer is a wab app which calls an API to retrieve a video. However, the API that should be containing the video is actually containing images where each image is a frame of the video! This is intentional; Framer stitches the frames together and mimics a 30fps video.
 ---
 
-## Problem
+## Prerequisits
+- Docker v19.03.13 or higher
+- Docker-compose v1.27.4 or higher
+- Node.js v16.15.1 or higher
+- npm v6.14.9 or higher
+- yarn v1.22.5 or higher
 
-A video is to be shown in this web app by calling an API endpoint to get the video. The API endpoint is returning an array of image URLs where each image is a frame of the video instead of a full video. This is intentional; find a way to stitch the images together to create a flipbook that mimics a video
+## How to Run
 
-## Requirements
+### Option 1: Deploying Client and Server into a docker container
+1. Deploy Client & Server (Using Docker) ➡ `$ docker-compose up`
+- or Server ONLY ➡ `$ cd Framer/server; yarn run dev`
+- or Client ONLY ➡ `$ cd Framer/client; yarn start`compose up
 
-The flipbook player must have the following core features:
-1. Support playing and pausing the flipbook.
-2. The flipbook should run at at-least 30 frames-per-second (fps).
-3. The images must be loaded over the network.
-   - Cannot download them and then load them locally.
+### Option 2: Deploying Client + _API_ into a docker container (<ins>_`EC2 Linux Instance`_<ins>)
+1. AWS Management Console
+2. Create _EC2 Linux Instance_
+3. Install the following within _EC2 Linux Instance_:
+  - `Node.js` + `npm` + `yarn`
+  - <a href="https://gist.github.com/npearce/6f3c7826c7499587f00957fee62f8ee9" target="_top"><b>`Docker + Docker-Compose`</b></a>
+  - clone project repository
 
-### optional features:
-
-1. A navigation bar that lets the user jump to different parts of the flipbook.
-2. Ability to customize the frame rate (10 fps, 30 fps, 60 fps).
-3. Ability to zoom in/out and pan.
-4. Another product feature shows a similar level of complexity.
-
-### Other Requirements
-
-- Code must use React and be written with Javascript or Typescript.
-- May use external libraries and packages as long as they do not make meeting the project requirements trivial. major pieces of logic and styling are custom. (For example, it may use the Bootstrap CSS framework but some custom styling with stylesheets should be present)
-- The project must be be installable and runnable from the command line without any additional software required beyond NodeJS and Yarn.
-
-### How the project is evaluated
-
-This project is designed to reflect the day-to-day work a frontend software engineer may do. As such, considering the user experience, the overall functionality, and the readability of code are important criteria.
-
-- Functionality
-  Does the app work smoothly? Are there no obvious or glaring bugs? For example, what happens if a user uses keyboard navigation and presses the spacebar while using the flipbook?
-- Software engineering
-  Does the project show good understanding and use of the selected framework? Is good software engineering practices being followed? Is the code logically structured and easy to read? Does the project show understanding of how to handle application state, respond to user input, and/or correctly utilize APIs?
-- Design
-  More interested in user experience than polished visual design. Information should be easily understandable. In other words, the design emphasis is on information architecture, not visual design. For example, instead of displaying a blank loading screen with a sharp transition, can an informative loading screen with a smooth transition be used?
+5. Deploy Client & Server (Using Docker) ➡ `$ docker-compose up`
+- or Server ONLY ➡ `$ cd Framer/server; yarn run dev`
+- or Client ONLY ➡ `$ cd Framer/client; yarn start`
