@@ -1,7 +1,7 @@
 # Framer
 
 ## Description
-- Framer is a wab app which calls an API to retrieve a video. However, the API that should be containing the video is actually containing images where each image is a frame of the video! This is intentional; Framer stitches the frames together and mimics a 30fps video.
+- Framer is a web app which calls an API to retrieve a video. However, the API that should be containing the video is actually containing images where each image is a frame of the video! This is intentional; Framer stitches the frames together and mimics a 30fps video.
 ---
 
 ## Prerequisits
